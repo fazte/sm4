@@ -1,5 +1,8 @@
+let block = document.querySelector('.block');
+let link = document.querySelector('.link');
+
 block.style.background = 'green';
-pp.style.color = 'white';
+link.style.color = 'white';
 
 let cost = prompt('Стоимость товара');
 let hav = prompt('Сколько денег у вас');
@@ -7,13 +10,19 @@ let hav = prompt('Сколько денег у вас');
 
 
 if((cost-hav) == 0){
-	alert ('Покупка совершена');
+	let box = '<p class="text">Покупка совершена</p>';
+  let report = document.querySelector('.report');
+  report.innerHTML = box;
 }else{
 	if((cost-hav) > 0){
-		alert ('Для покупки не хватает ' + ' ' + (cost-hav) +' р.');
+		let box = '<p class="text">Для покупки не хватает ' + ' ' + (cost-hav) +' р.</p>';
+        let report = document.querySelector('.report');
+        report.innerHTML = box;
 	}else{
 			if((cost-hav) < 0){
-			alert('Покупка совершена. Сдача ' + ' ' + (hav-cost) +' р.');
+			let box = '<p class="text">Покупка совершена. Сдача ' + ' ' + (hav-cost) +' р.</p>';
+      let report = document.querySelector('.report');
+      report.innerHTML = box;
 		}
 	
 	}
